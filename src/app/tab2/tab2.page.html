@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Klik Untuk melihat detail
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,29 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<!-- (click)="detail(data.judul,data.isi,data.tanggal,data.nilainote,data.image)" -->
+  <ion-list *ngFor="let data of isiData | async">
+    <ion-item>
+      Judul : <h1>{{data.judul}}</h1>
+    </ion-item>
+    <ion-item>
+      isi :<h1>{{data.isi}}</h1>
+    </ion-item>
+    <ion-item>
+      tanggal: <h1>{{data.tanggal}}</h1>
+      
+    </ion-item>
+    <ion-item>
+      nilai note:<h1>{{data.nilainote}}</h1>
+      
+    </ion-item>
+    <ion-item>
+      <ion-img [src]="data.image" ></ion-img>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
